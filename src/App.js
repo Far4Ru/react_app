@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function App() {
-	let number = 0;
+	const [number, setNumber] = useState(0);
+	
+	function increment() {
+		setNumber(number + 1)
+	}
+	
+	function decrement() {
+		setNumber(number - 1)
+	}
+	
 	return (
 		<div className="App">
 			<h1>{number}</h1>
-			<button onclick={() => number += 1}>Увеличить</button>
-			<button onclick={() => number -= 1}>Уменьшить</button>
+			<button onClick={increment}>Увеличить</button>
+			<button onClick={decrement}>Уменьшить</button>
 		</div>
 	);
 }
